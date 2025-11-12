@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ธรรมรัตน์ ธรรมา</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sarabun', Arial, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                        url('https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?w=1920') center/cover;
+            position: relative;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            z-index: 10;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            color: #f0f0f0;
+            font-size: 1.3em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* นกบิน */
+        .bird {
+            position: absolute;
+            font-size: 30px;
+            animation: fly 15s linear infinite;
+        }
+
+        .bird:nth-child(1) { top: 15%; animation-delay: 0s; }
+        .bird:nth-child(2) { top: 25%; animation-delay: 5s; }
+        .bird:nth-child(3) { top: 35%; animation-delay: 10s; }
+
+        /* น้ำตก */
+        .waterfall {
+            position: absolute;
+            right: 10%;
+            top: 0;
+            width: 100px;
+            height: 100%;
+            background: linear-gradient(180deg, 
+                transparent 0%, 
+                rgba(173, 216, 230, 0.3) 20%, 
+                rgba(173, 216, 230, 0.5) 100%);
+            animation: flow 2s linear infinite;
+        }
+
+        /* แม่น้ำ */
+        .river {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(180deg, 
+                rgba(100, 149, 237, 0.4) 0%, 
+                rgba(65, 105, 225, 0.6) 100%);
+            animation: wave 3s ease-in-out infinite;
+        }
+
+        /* สัตว์ป่า */
+        .animals {
+            position: absolute;
+            bottom: 160px;
+            left: 5%;
+            font-size: 40px;
+            animation: walk 20s linear infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fly {
+            0% { left: -5%; }
+            100% { left: 105%; }
+        }
+
+        @keyframes flow {
+            0% { opacity: 0.6; }
+            50% { opacity: 0.8; }
+            100% { opacity: 0.6; }
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes walk {
+            0% { left: -10%; }
+            100% { left: 110%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- นกบิน -->
+    <div class="bird">🦅</div>
+    <div class="bird">🕊️</div>
+    <div class="bird">🦜</div>
+
+    <!-- น้ำตก -->
+    <div class="waterfall"></div>
+
+    <!-- แม่น้ำ -->
+    <div class="river"></div>
+
+    <!-- สัตว์ป่า -->
+    <div class="animals">🦌</div>
+
+    <!-- เนื้อหาหลัก -->
+    <div class="container">
+        <div class="card">
+            <h1>สวัสดีครับ</h1>
+            <p>ผม ธรรมรัตน์ ธรรมา</p>
+            <p style="margin-top: 20px;">ยินดีที่ได้รู้จักครับ 🙏</p>
+        </div>
+    </div>
+</body>
+</html>
